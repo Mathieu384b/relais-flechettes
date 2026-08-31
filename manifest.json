@@ -1,0 +1,10 @@
+{
+  "name": "Relais de classement Fléchettes",
+  "short_name": "Relais Fléchettes",
+  "description": "Application de relais de score pour Autodarts",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#12151b",
+  "theme_color": "#12151b",
+  "orientation": "portrait"
+}
