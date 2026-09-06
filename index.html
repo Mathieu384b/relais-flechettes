@@ -693,7 +693,20 @@
     font-size:0.95rem;
   }
 
-
+/* =========================================================
+     VOIX / CALLER
+  ========================================================= */
+  function playScore(score) {
+    // Si le joueur fait 0, on lance le fichier 0.mp3 (Miss)
+    var fileName = score;
+    
+    // On met bien "SONS" en majuscules pour correspondre à ton dossier
+    var audio = new Audio('SONS/' + fileName + '.mp3');
+    
+    audio.play().catch(function(error) {
+      console.warn("Fichier audio introuvable pour le score : " + score);
+    });
+  }
   /* =========================================================
      JEU
   ========================================================= */
@@ -3670,7 +3683,7 @@
     ){
       return;
     }
-
+    playScore(points);
 
     state.turnDarts.push({
 
