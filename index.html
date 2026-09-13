@@ -1243,11 +1243,11 @@
     // 2. On fabrique le nom exact (ex: "AM-00060_60_mono.mp3")
     var fileName = "AM-" + zeros + "_" + score + "_mono.mp3";
     
-    // 3. On demande au code de chercher dans le dossier "FILS"
-    var audio = new Audio('FILS/' + fileName);
+    // 3. On demande au code de chercher dans le dossier "SONS"
+    var audio = new Audio('SONS/' + fileName);
     
     audio.play().catch(function(error) {
-      console.warn("Fichier introuvable : FILS/" + fileName);
+      console.warn("Fichier introuvable : SONS/" + fileName);
     });
   }
 
