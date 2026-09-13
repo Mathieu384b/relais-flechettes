@@ -1237,17 +1237,19 @@
      VOIX / CALLER
   ========================================================= */
   function playScore(score) {
-    // Si le joueur fait 0, on lance le fichier 0.mp3 (Miss)
-    var fileName = score;
+    // 1. On fabrique les zéros (ex: le score 60 devient "00060")
+    var zeros = ("00000" + score).slice(-5);
     
-    // On met bien "SONS" en majuscules pour correspondre à ton dossier
-    var audio = new Audio('SONS/' + fileName + '.mp3');
+    // 2. On fabrique le nom exact (ex: "AM-00060_60_mono.mp3")
+    var fileName = "AM-" + zeros + "_" + score + "_mono.mp3";
+    
+    // 3. On demande au code de chercher dans le dossier "FILS"
+    var audio = new Audio('FILS/' + fileName);
     
     audio.play().catch(function(error) {
-      console.warn("Fichier audio introuvable pour le score : " + score);
+      console.warn("Fichier introuvable : FILS/" + fileName);
     });
   }
-
 
   /* =========================================================
      STOCKAGE DES JOUEURS
